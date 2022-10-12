@@ -1,4 +1,4 @@
-import terminalInterface from './terminalInterface.js';
+import terminalInterface from '../terminalInterface.js';
 
 export const askQuestion = (question) => {
     return new Promise((resolve) => {
@@ -8,28 +8,26 @@ export const askQuestion = (question) => {
     });
 };
 
-export const askRequiredQuestion = async (questionCallback, entityName) => {
-    let result = await questionCallback();
+export const askRequiredQuestion = async (question, entityName) => {
+    let result = await askQuestion(question);
 
     while (!result) {
         console.log(`\nTo continue, enter the ${entityName}, please`);
 
-        result = await questionCallback();
+        result = await askQuestion(question);
     }
 
     return result;
 };
 
 export const defineFileName = async () => {
-    const askFileName = () => askQuestion('What is the file name? ');
-    let fileName = await askRequiredQuestion(askFileName, 'file name');
+    let fileName = await askRequiredQuestion('What is the file name? ', 'file name');
 
     return fileName;
 };
 
 export const defineFileContent = async () => {
-    const askFileContent = () => askQuestion('What is the file content?\n');
-    let fileContent = await askRequiredQuestion(askFileContent, 'file content');
+    let fileContent = await askRequiredQuestion('What is the file content?\n', 'file content');
 
     return fileContent;
 };

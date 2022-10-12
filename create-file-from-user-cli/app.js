@@ -1,6 +1,6 @@
 import { defineFileName, defineFileContent } from './utils/questions.utils.js';
 import { writeFile } from './utils/files.utils.js';
-import terminalInterface from './utils/terminalInterface.js';
+import terminalInterface from './terminalInterface.js';
 
 const fileName = await defineFileName();
 console.log('\n');
