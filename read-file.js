@@ -42,3 +42,37 @@ const filePath = path.resolve('./test.txt');
 
 // fs.readFile(filePath, 'utf-8', reader);
 //#endregion
+
+//#region remove file
+// fs.unlink(filePath, (err) => {
+//     if (err) {
+//         console.error(err);
+//     }
+
+//     console.log(`${filePath} removed`);
+// });
+//#endregion
+
+//#region move file
+// const newFilePath = path.resolve('./test-test-test.txt');
+
+// fs.rename(filePath, newFilePath, (err) => {
+//     if (err) {
+//         console.error(err);
+//     }
+//
+//     console.log(`${filePath} moved to ${newFilePath}`);
+// });
+//#endregion
+
+//#region copy file
+// const newFilePath = path.resolve('./test-test-test.txt');
+
+// fs.copyFile(filePath, newFilePath, (err) => {
+//     if (err) {
+//         console.error(err);
+//     }
+
+//     console.log(`${newFilePath} created`);
+// });
+//#endregion
